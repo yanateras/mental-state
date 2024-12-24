@@ -11,8 +11,8 @@
   (if (funcall matcher form)
       (funcall replacer form)
       (if (listp form)
-          (mapcar (lambda (form)
-                    (walk-replace form matcher replacer))
+          (mapcar (lambda (subform)
+                    (walk-replace subform matcher replacer))
                   form)
           form)))
 
