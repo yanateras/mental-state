@@ -23,16 +23,16 @@
 (defmacro anxiety (form)
   "What if?"
   (flet ((matcher (form)
-          (find form *conditionals*))
+           (find form *conditionals*))
          (replacer (form)
-          (declare (ignore form))
-          'progn))
+           (declare (ignore form))
+           'progn))
     (walk-replace form #'matcher #'replacer)))
 
 (defmacro depression (form)
   "Never quite"
   `(labels ((trap (value)
-             (lambda () (trap value))))
+              (lambda () (trap value))))
      (trap ,form)))
 
 (defmacro dissociation (form)
