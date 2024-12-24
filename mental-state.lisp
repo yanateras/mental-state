@@ -36,6 +36,6 @@
   `(progn ,form ()))
 
 (defmacro obsession (form)
-  "And again"
+  "Must"
   `(labels ((repeat () ,form (repeat)))
      (repeat)))
