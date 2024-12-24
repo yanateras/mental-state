@@ -2,8 +2,7 @@
   (:use #:cl)
   (:export #:anxiety
            #:depression
-           #:dissociation
-           #:obsession))
+           #:dissociation))
 
 (in-package #:moe.yana.mental-state)
 
@@ -34,8 +33,3 @@
 (defmacro dissociation (form)
   ""
   `(progn ,form ()))
-
-(defmacro obsession (form)
-  "Must"
-  `(labels ((repeat () ,form (repeat)))
-     (repeat)))
