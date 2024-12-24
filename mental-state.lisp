@@ -15,10 +15,15 @@
                   form)
           form)))
 
+(defparameter *conditionals*
+  '(if when unless cond
+    case ccase ecase
+    typecase ctypecase etypecase))
+
 (defmacro anxiety (form)
   "What if?"
   (flet ((matcher (form)
-          (find form '(if when unless cond)))
+          (find form *conditionals*))
          (replacer (form)
           (declare (ignore form))
           'progn))
